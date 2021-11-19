@@ -6,6 +6,8 @@ $stmt->execute(array(
     ':e' => "deeptimaanbanerjee@gmail.com",
 ));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+print_r($rows);
+echo("<br>");
 foreach ($rows as $row)
 {
     print_r($row);

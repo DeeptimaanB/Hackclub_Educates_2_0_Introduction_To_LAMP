@@ -4,9 +4,9 @@
     $msg="";   
     if(isset($_POST['email']) && isset($_POST['psw']))
     {
+        $psw= hash('md5',$_POST['psw']);
         $sql="SELECT * FROM users where email = :e AND BINARY pass = :p";
         $stmt=$pdo->prepare($sql);
-        $psw= hash('md5',$_POST['psw']);
         $stmt->execute(array(
             ':e' => $_POST['email'],
             ':p' => $psw,
