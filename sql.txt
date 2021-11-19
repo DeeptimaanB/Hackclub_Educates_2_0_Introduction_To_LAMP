@@ -1,0 +1,14 @@
+CREATE DATABASE phpapp;
+
+GRANT ALL ON phpapp.* TO "phpapp"@"localhost" IDENTIFIED BY "phpapp";
+GRANT ALL ON phpapp.* TO "phpapp"@"127.0.0.1" IDENTIFIED BY "phpapp";
+
+CREATE TABLE `users` (
+  `user_id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(60) DEFAULT NULL,
+  `fn` varchar(15) DEFAULT NULL,
+  `ln` varchar(15) DEFAULT NULL,
+  `pass` varchar(32) DEFAULT NULL,
+  `dateCreated` timestamp NOT NULL DEFAULT current_timestamp(),
+   PRIMARY KEY (`user_id`)
+);
